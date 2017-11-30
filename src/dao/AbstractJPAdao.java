@@ -32,6 +32,7 @@ public abstract class AbstractJPAdao<T extends iEntity> implements iDao<T> {
             JpaUtil.getEntityManager().merge(t);
         }
         JpaUtil.getEntityManager().getTransaction().commit();
+        JpaUtil.closeEntityManager();
     }
 
     @Override
